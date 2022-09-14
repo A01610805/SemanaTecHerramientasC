@@ -1,19 +1,17 @@
 """Pacman, classic arcade game.
 
-Exercises
-
-1. Change the board.
-2. Change the number of ghosts.
-3. Change where pacman starts.
-4. Make the ghosts faster/slower.
-5. Make the ghosts smarter.
+Modified by Jose ANtonio López 
+September 15, 2022
 """
 
+#Aquí se importan las librerias que se utilizan
 from random import choice
 from turtle import *
 
 from freegames import floor, vector
 
+"""Valores iniciales del juego, como el puntaje 
+y el punto de inicio de pacman y los fantasmas"""
 state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
@@ -167,6 +165,7 @@ def change(x, y):
         aim.y = y
 
 
+#Se llama a las funciones para que corra el juego
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
@@ -174,6 +173,7 @@ writer.goto(160, 160)
 writer.color('white')
 writer.write(state['score'])
 listen()
+#Funcionamiento de las teclas de flecha
 onkey(lambda: change(5, 0), 'Right')
 onkey(lambda: change(-5, 0), 'Left')
 onkey(lambda: change(0, 5), 'Up')
@@ -181,19 +181,3 @@ onkey(lambda: change(0, -5), 'Down')
 world()
 move()
 done()
-
-Logo
-Free Python Games
-
-Donate
-
-If you or your organization uses Free Games, consider donating:
-
-Donate to Free Python Games
-Related Topics
-
-    Documentation overview
-        Previous: Memory
-        Next: Fidget
-
-Quick search
