@@ -156,7 +156,8 @@ def move():
         if abs(pacman - point) < 20:
             return
 
-    ontimer(move, 100)
+    #Aquí se modifica la velocidad de movimiento, al reducir el refresh-rate.
+    ontimer(move, 10)
 
 
 def change(x, y):
