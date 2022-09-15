@@ -1,6 +1,6 @@
 """Pacman, classic arcade game.
 
-Modified by Jose ANtonio López 
+Modified by Jose Antonio López 
 September 15, 2022
 """
 
