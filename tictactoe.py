@@ -1,6 +1,7 @@
 """Tic Tac Toe
 
-Retrieved from https://grantjenks.com/docs/freegames/tictactoe.html on 15/09/2020
+Retrieved from https://grantjenks.com/docs/freegames/tictactoe.html
+                                                    on 15/09/2020
 Modified by Rodrigo Muñoz Guerrero on 15/09/2020
 """
 
@@ -46,9 +47,9 @@ def tap(x, y):
     """Draw X or O in tapped square."""
     x = floor(x)
     y = floor(y)
-    if y not in yd:                     # Create the index if it is not in the dictionary
+    if y not in yd:         # Create the index if it is not in the dictionary
         yd[y] = []
-    if x not in xd:                     # Create the index if it is not in the dictionary
+    if x not in xd:         # Create the index if it is not in the dictionary
         xd[x] = []
     if x in yd[y] and y in xd[x]:       # Checks if the box is empty
         print("Casilla ocupada")
@@ -60,6 +61,7 @@ def tap(x, y):
         draw(x, y)
         update()
         state['player'] = not player
+
 
 xd = {}
 yd = {}
