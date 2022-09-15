@@ -1,11 +1,7 @@
 """Tic Tac Toe
 
-Exercises
-
-1. Give the X and O a different color and width.
-2. What happens when someone taps a taken spot?
-3. How would you detect when someone has won?
-4. How could you create a computer player?
+Retrieved from https://grantjenks.com/docs/freegames/tictactoe.html on 15/09/2020
+Modified by Rodrigo Muñoz Guerrero on 15/09/2020
 """
 
 from turtle import (color, up, goto, down, circle, update, setup,
@@ -24,7 +20,7 @@ def grid():
 def drawx(x, y):
     """Draw X player."""
     color('blue')
-    line(x+32, y+32, x + 101, y + 101) #133
+    line(x+32, y+32, x + 101, y + 101)
     line(x+32, y + 101, x + 101, y+32)
 
 
@@ -32,9 +28,9 @@ def drawo(x, y):
     """Draw O player."""
     color('red')
     up()
-    goto(x + 67, y + 25) #67,  5
+    goto(x + 67, y + 25)
     down()
-    circle(42) #62
+    circle(42)
 
 
 def floor(value):
@@ -50,11 +46,11 @@ def tap(x, y):
     """Draw X or O in tapped square."""
     x = floor(x)
     y = floor(y)
-    if y not in yd:
+    if y not in yd:                     # Create the index if it is not in the dictionary
         yd[y] = []
-    if x not in xd:
+    if x not in xd:                     # Create the index if it is not in the dictionary
         xd[x] = []
-    if x in yd[y] and y in xd[x]:
+    if x in yd[y] and y in xd[x]:       # Checks if the box is empty
         print("Casilla ocupada")
     else:
         xd[x].append(y)
