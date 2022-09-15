@@ -1,16 +1,18 @@
 """Pacman, classic arcade game.
 
-Modified by Jose Antonio López 
+Modified by Jose Antonio López
 September 15, 2022
 """
 
-#Aquí se importan las librerias que se utilizan
+# Aquí se importan las librerias que se utilizan
 from random import choice
-from turtle import *
+from turtle import (Turtle, bgcolor, clear, up, goto, dot,
+                    update, ontimer, setup, hideturtle, tracer,
+                    listen, onkey, done)
 
 from freegames import floor, vector
 
-"""Valores iniciales del juego, como el puntaje 
+"""Valores iniciales del juego, como el puntaje
 y el punto de inicio de pacman y los fantasmas"""
 state = {'score': 0}
 path = Turtle(visible=False)
@@ -25,7 +27,7 @@ ghosts = [
 ]
 
 # fmt: off
-#Este es el tablero; 1=azul, 0=negro.
+# Este es el tablero; 1=azul, 0=negro.
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -154,7 +156,7 @@ def move():
         if abs(pacman - point) < 20:
             return
 
-    #Aquí se modifica la velocidad de movimiento, al reducir el refresh-rate.
+    # Aquí se modifica la velocidad de movimiento, al reducir el refresh-rate.
     ontimer(move, 10)
 
 
@@ -165,7 +167,7 @@ def change(x, y):
         aim.y = y
 
 
-#Se llama a las funciones para que corra el juego
+# Se llama a las funciones para que corra el juego
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
@@ -173,7 +175,7 @@ writer.goto(160, 160)
 writer.color('white')
 writer.write(state['score'])
 listen()
-#Funcionamiento de las teclas de flecha
+# Funcionamiento de las teclas de flecha
 onkey(lambda: change(5, 0), 'Right')
 onkey(lambda: change(-5, 0), 'Left')
 onkey(lambda: change(0, 5), 'Up')
