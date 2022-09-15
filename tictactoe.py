@@ -50,13 +50,23 @@ def tap(x, y):
     """Draw X or O in tapped square."""
     x = floor(x)
     y = floor(y)
-    player = state['player']
-    draw = players[player]
-    draw(x, y)
-    update()
-    state['player'] = not player
+    if y not in yd:
+        yd[y] = []
+    if x not in xd:
+        xd[x] = []
+    if x in yd[y] and y in xd[x]:
+        print("Casilla ocupada")
+    else:
+        xd[x].append(y)
+        yd[y].append(x)
+        player = state['player']
+        draw = players[player]
+        draw(x, y)
+        update()
+        state['player'] = not player
 
-
+xd = {}
+yd = {}
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
